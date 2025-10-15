@@ -53,7 +53,7 @@ app.get('/jogos/estatisticas', (req, res) => {
     });
 });
 
-// GET filtro com query params: precoMax, genero, plataforma
+// GET filtro precoMax, genero, plataforma
 app.get('/jogos/filtro', (req, res) => {
     const { precoMax, genero, plataforma } = req.query;
 
@@ -79,7 +79,7 @@ app.get('/jogos/filtro', (req, res) => {
     res.json(jogosFiltrados);
 });
 
-// GET mostrar informações de um jogo específico pelo ID — esta rota deve ficar por último das rotas /jogos para evitar conflitos
+// GET mostrar informações de um jogo específico pelo ID
 app.get('/jogos/:id', (req, res) => {
     const jogoId = parseInt(req.params.id);
     const jogo = jogos.find(j => j.id === jogoId);
